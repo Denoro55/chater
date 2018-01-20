@@ -162,7 +162,7 @@ io.sockets.on('connection',function(client){
   client.on('message',function(data){
     client.get('nick',function(err,nick){
       var getText = data.message.replace('<','&lt;').replace('>','&gt;');
-      io.sockets.emit('message',{message: '<span style="font-weight: bold;">'+nick+'</span>: '+data.message});
+      io.sockets.emit('message',{message: '<span style="font-weight: bold;">'+nick+'</span>: '+getText});
     });
   })
 
