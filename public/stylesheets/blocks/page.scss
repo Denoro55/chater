@@ -1,0 +1,91 @@
+.page{
+	display: flex;
+}
+.page__blog{
+	margin-left: 40px;
+	flex: 1;
+	margin-right: 10%;
+}
+.page__item{
+	margin-bottom: 20px;
+}
+.page__item-title{
+	font-weight: 600;
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+.page__item-text{
+	margin-bottom: 10px;
+}
+.page__avatar{
+	width: 400px;
+	min-width: 200px;
+	overflow: hidden;
+}
+.avatar-image{
+	img{
+		width: 100%;
+	}
+}
+.avatar-content{
+	margin-bottom: 10px;
+}
+.change-avatar{
+	border: 0;
+	background: none;
+	color: #00B7FF;
+	font-size: 14px;
+	padding: 0;
+	&:hover{
+		cursor: pointer;
+	}
+}
+.form__btns{
+	button{
+		transition: all .5s;
+		&:hover{
+			color: blue;
+		}
+	}
+}
+
+
+// add
+
+.blog__add{
+	padding: 10px 0;
+	// border: 1px solid #0095ff;
+	width: 100%;
+	input{
+		width: 100%;		
+		display: block;
+		flex: 1;
+		margin-right: 10px;
+		font-size: 14px;
+		font-family: Arial;
+		padding: 5px;
+	}
+	textarea{
+		resize: none;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 7px;
+		font-size: 14px;
+		font-family: Arial;
+		padding: 5px;
+		height: 80px;
+	}
+	button{
+		background: green;
+		color: white;
+		border: 1px solid #ddd;
+		padding: 0 10px;
+		&:hover{
+			cursor: pointer;
+		}
+	}
+}
+.blog__add-top{
+	display: flex;
+	margin-bottom: 10px;
+}

@@ -1,0 +1,72 @@
+body {
+  padding: 30px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+a {
+  color: #00B7FF;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.link-block{
+	margin-bottom: 7px;
+}
+
+.form-block{
+	margin-bottom: 7px;
+}
+
+input{
+	padding: 3px 6px;
+	box-sizing: border-box;
+	text-align: left;
+}
+
+input[type="submit"]{
+	background: silver;
+	border: 1px solid black;
+}
+
+input[type="submit"]:hover{
+	cursor: pointer;
+}
+
+.chat{
+	display: flex;
+}
+.chat__left{
+	margin-right: 40px;
+	width: 	320px;
+}
+#content{
+	min-height: 320px;
+	overflow: hidden;
+	margin-bottom: 5px;
+	overflow-y: scroll;
+}
+#messager{
+	display: flex;
+	width: 100%;
+	input[type="text"]{
+		flex: 1;
+		border: 1px solid black;
+		border-right: 0;
+	}
+	input[type="submit"]{
+		padding: 3px 10px;
+	}
+}
+
+ul{
+	padding: 0;
+	li{
+		margin-left: 18px;
+	}
+}
+
+@import 'blocks/page';

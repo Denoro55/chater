@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .link-block
+    a(href="/") Главная
+  h4 Зарегистрироваться
+  form(method="post" action="/register" onsubmit="return validate();")
+    div.form-block
+      input(id="name" type="text" name="name" placeholder="Имя" autocomplete="off")
+    div.form-block
+      input(id="password" type="password" name="password" placeholder="Пароль" autocomplete="off")
+    div.form-block
+      input(id="password-repeat" type="password" name="password-repeat" placeholder="Повторный пароль" autocomplete="off")
+    div.form-block
+      input(type="submit" value="Зарегистрироваться")
+    p(style='color: #27a527; font-weight: bold;') #{result}
+  script(src="/javascripts/validate.js")

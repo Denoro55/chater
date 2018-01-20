@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  .link-block
+    a(href="/") Главная
+  .page
+    .page__avatar
+      img(src="lol.jpg", alt="")
+      .avatar-image
+        //- each index in items
+        //-   img(src=`${index.picture}`, alt="avatar")
+        img(src=`${path}`, alt="")
+      .avatar-content
+        h1 [ #{title} ]
+        .user-real(style=`display: ${display}`)
+          form.form#upload(action='/upload' method="POST" enctype="multipart/form-data")
+              //- .form__subtitle Загрузите картинку на сервер
+              .status
+              label.form__input-line
+                  input(name="name" type="text" placeholder="Описание картинки" value="picture" style="display: none;").form__input#file-desc
+              label.form__input-line
+                  input(name="photo" type="file" required accept="image/*" style="padding: 0;margin-bottom: 8px;").form__input#file-select
+              .form__btns.form__input-line
+                  button(type="submit").change-avatar Сменить фото
+                  button(type="reset" style="padding: 0;margin-left: 10px;").change-avatar Очистить
+          .blog__add
+            form(action="/addpost" method="POST")
+              .blog__add-top
+                input(name="title" type="text" placeholder="Заголовок")
+                button.add-btn Добавить новость
+              textarea(name="text" type="text" placeholder="Текст" style=";margin-bottom: 7px;")
+              label
+                -
+                  var data = new Date().toLocaleDateString('ru', { 
+                              year: 'numeric', 
+                              month: '2-digit', 
+                              day: '2-digit'
+                              })
+                input(name="date" type="date" value=`${data}`) 
+    .page__blog
+      ul.page__list
+        each item in items
+          li.page__item
+            .page__item-title= item.title
+            .page__item-text= item.body
+              -
+                var data = new Date(item.date).toLocaleDateString('ru', { 
+                                year: 'numeric', 
+                                month: '2-digit', 
+                                day: '2-digit'
+                                })
+            .page__item-date= data

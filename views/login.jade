@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  .link-block
+    a(href="/") Главная
+  h4 Войти в существующий аккаунт
+  form(method="post" action="/login")
+    div.form-block
+      input(type="text" name="name" placeholder="Имя" autocomplete="off")
+    div.form-block
+      input(type="password" name="password" placeholder="Пароль" autocomplete="off")
+    div.form-block
+      input(type="submit" value="Войти")

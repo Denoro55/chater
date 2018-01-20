@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+    <span>[ </span>
+    a(href="/myaccount") #{name} 
+    <span> ]</span>
+  a(href="")
+  .link-block
+    a(href="/") Главная
+  .link-block
+    a(href="/chat") Чат
+  .link-block
+    a(href="/register") Регистрация
+  .link-block
+    a(href="/login") Вход
+  .link-block
+    a(href="/exit") Выход

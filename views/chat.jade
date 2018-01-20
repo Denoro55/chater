@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title} <strong>[ <span class="nickname">#{name}</span> ]</strong> <strong> <span style="display: none;" class="identif">#{id}</span></strong>
+  .link-block
+    a(href="/") Главная
+  .chat
+    .chat__left
+      #content
+        div.sizer(style="opacity: 0") Hello world!
+      form#messager
+        input(disable type="text")
+        input(type="submit" value="Отправить")
+    #users(style="font-weight: bold;display: none;") В чате:
+      ul
+  script(src="javascripts/chat.js")
+  script(src="/socket.io/socket.io.js")
