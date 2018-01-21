@@ -29,7 +29,7 @@ router.get('/myaccount', function(req, res, next) {
 		User.findById(req.session.user,function(err,user){
 			if (err) next(err);
 			res.status(302);
-			res.setHeader('Location','/user/'+user.name);
+			res.setHeader('Location','/user/'+encodeURI(user.name));
 			res.end();
 		})
 	} else {
@@ -213,7 +213,7 @@ router.post('/upload', function (req, res) {
 			.then(
 				i => {
 					res.status(302);
-					res.setHeader('Location','/user/'+user.name);
+					res.setHeader('Location','/user/'+encodeURI(user.name));
 					res.end();
 				},
 				e => res.json({status: e.message})
@@ -262,7 +262,7 @@ router.post('/addpost', (req, res) => {
 		    (i) => {
 		    	User.findById(req.session.user,function(err,user){
 		    		res.status(302);
-					res.setHeader('Location','/user/'+user.name);
+					res.setHeader('Location','/user/'+encodeURI(user.name));
 					res.end();
 				})
 		      // res.json({status: 'Запись успешно добавлена'});
