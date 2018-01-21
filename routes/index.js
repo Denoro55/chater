@@ -133,7 +133,7 @@ router.post('/login', function(req, res, next) {
 				req.session.user = user._id;
 				console.log(req.session.user);
 				res.status(302);
-				res.setHeader('Location','/user/'+user.name);
+				res.setHeader('Location','/user/'+encodeURI(user.name));
 				res.end();
 			} else {
 				next(e.setError(401));
